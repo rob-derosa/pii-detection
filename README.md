@@ -56,10 +56,10 @@ The following inputs are required:
 ## In Action
 
 **A bug filed by a user was commented on by a contributor, triggering an PII analysis of the body of the comment**
-![PII Detection Step Output](https://github.com/rob-derosa/PiiDetectionAction/blob/main/assets/pii_detection_action_output.png?raw=true)
+![PII Detection Step Output](assets/pii_detection_action_output.png?raw=true)
 
 **PII was detected, some of which was discarded due category configuration**
-![Issue containing PII flagged with label](https://github.com/rob-derosa/PiiDetectionAction/blob/main/assets/pii_detection_issue_labeled.png?raw=true)
+![Issue containing PII flagged with label](assets/pii_detection_issue_labeled.png?raw=true)
 
 
 ## Limitations
