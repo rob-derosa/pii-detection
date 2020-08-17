@@ -27,5 +27,5 @@ jobs:
           azure-cognitive-subscription-key: ${{ secrets.AZURE_COGNITIVE_SUBSCRIPTION_KEY }}
           azure-cognitive-endpoint: ${{ secrets.AZURE_COGNITIVE_ENDPOINT }}
           categories: "email|ip|phone number"
-          label-text: "PII DETECTED!!"
+          label-text: "PII Detected!!"
           github-token: ${{ secrets.GITHUB_TOKEN }}

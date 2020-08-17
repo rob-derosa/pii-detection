@@ -11,7 +11,7 @@ A `results` output value is available containing the JSON response payload provi
 Create a `.github/workflows/detect-pii.yml` file:
 
 ```yaml
-name: 'detect-pii'
+name: 'Detect PII'
 on:
   issues:
     types:
@@ -33,14 +33,13 @@ jobs:
   detect-pii:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./
+      - uses: rob-derosa/pii-detector@v1
         name: "Run PII detector"
         with:
           azure-cognitive-subscription-key: ${{ secrets.AZURE_COGNITIVE_SUBSCRIPTION_KEY }}
           azure-cognitive-endpoint: ${{ secrets.AZURE_COGNITIVE_ENDPOINT }}
           categories: "email|ip|phone number"
-          label-text: "PII DETECTED!!"
+          label-text: "PII Detected!!"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -73,7 +72,7 @@ The following inputs are required:
 * input parameters to configure:
   * source language (defaults to English)
   * additional trigger points
-  * custom labels to add based on PII type
+  * custom labels based on PII type
   * subcategory support
 * tests
 * support for larger text payloads
