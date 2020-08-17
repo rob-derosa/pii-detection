@@ -1,0 +1,29 @@
+name: "Enforce Package Policy"
+on:
+  push:
+  pull_request:
+    types:
+      - opened
+      - edited
+jobs:
+  enforce-package-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rob-derosa/package-policy@v1
+        name: "Check for package violations"
+        id: package-policy
+        with:
+          policy: allow
+          policy-url: "https://gist.githubusercontent.com/rob-derosa/965f4d51e5eb006a928cffe176998923/raw/1293e1273e66dfa8574ea3579261d95fc4670373/policy.json"
+          fail-if-violations: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/github-script@v2
+        name: "Respond to package violations"
+        id: post-script
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          violations: ${{steps.package-policy.outputs.violations}}
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/.github/workflows/package_violation.js`)
+            await script({github, context, core})

@@ -1,0 +1,28 @@
+name: 'PII Detection Action'
+description: 'Detects PII, such as phone numbers, SSN, email addresses, IP addresses, etc. in any issues, pull requests and comments'
+author: 'rob-derosa@github.com'
+branding:
+  icon: alert-triangle
+  color: red
+inputs:
+  azure-cognitive-subscription-key:
+    required: true
+    description: 'Azure Cognitive Services resource key found in in the Azure Portal'
+  azure-cognitive-endpoint:
+    required: true
+    description: 'Azure Cognitive Services endpoint found in in the Azure Portal'
+  categories:
+    required: true
+    description: 'A pipe-separated list of included categories'
+  label-text:
+    required: false
+    description: 'The text of the label to be applied to any issues or pull requests containing PII'
+  github-token:
+    required: true
+    description: 'Your GitHub token'
+outputs:
+  results:
+      description: 'PII analysis JSON results from Microsoft Text Analytics'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
