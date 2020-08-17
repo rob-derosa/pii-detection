@@ -1,4 +1,4 @@
-name: 'PII Detection Action'
+name: 'PII Detection'
 description: 'Detects PII, such as phone numbers, SSN, email addresses, IP addresses, etc. in any issues, pull requests and comments'
 author: 'rob-derosa@github.com'
 branding:
