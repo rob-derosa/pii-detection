@@ -15,7 +15,7 @@ jobs:
         id: action-policy
         with:
           policy: allow
-          policy-url: "https://gist.githubusercontent.com/rob-derosa/ba7ecb82b164eca456142337acbdf6c0/raw/4a6232fd5549b1b174e066d11036f87b811f3dd8/actions_policy.json"
+          policy-url: "https://gist.githubusercontent.com/rob-derosa/ba7ecb82b164eca456142337acbdf6c0/raw/b8250e73c209f52aefe9b76c082069a04e5a7367/actions_policy.json"
           fail-if-violations: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/github-script@v2
