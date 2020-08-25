@@ -58,7 +58,7 @@ The following inputs are required:
 **A bug filed by a user was commented on by a contributor, triggering an PII analysis of the body of the comment**
 ![PII Detection Step Output](assets/pii_detection_action_output.png?raw=true)
 
-**PII was detected, some of which was discarded due category configuration**
+**PII was detected, some of which was discarded due to category configuration**
 ![Issue containing PII flagged with label](assets/pii_detection_issue_labeled.png?raw=true)
 
 
