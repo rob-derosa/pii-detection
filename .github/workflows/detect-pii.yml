@@ -18,7 +18,7 @@ on:
       - edited
 jobs:
   detect-pii:
-    runs-on: self-hosted
+    runs-on: ubuntu
     steps:
       - uses: actions/checkout@v2
       - uses: ./
