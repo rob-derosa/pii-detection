@@ -33,7 +33,7 @@ jobs:
   detect-pii:
     runs-on: ubuntu-latest
     steps:
-      - uses: rob-derosa/pii-detector@v1
+      - uses: rob-derosa/pii-detection@v1.0
         name: "Run PII detector"
         with:
           azure-cognitive-subscription-key: ${{ secrets.AZURE_COGNITIVE_SUBSCRIPTION_KEY }}
