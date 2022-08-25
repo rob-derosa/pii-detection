@@ -1,0 +1,17 @@
+name: "Alert team about detected PII"
+
+on:
+  label:
+    types: [created]
+    
+jobs:
+  
+  alert-team:
+    name: Alert team of detected PII
+    runs-on: ubuntu-latest
+    
+    steps:
+      id: slack
+        uses: slackapi/slack-github-action@v1.21.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
