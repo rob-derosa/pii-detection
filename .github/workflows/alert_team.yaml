@@ -7,7 +7,7 @@ on:
 jobs:
   
   alert-team:
-    if: github.event.label.name == 'help-wanted'
+    if: github.event.label.name == 'PII Dectected!!'
     runs-on: ubuntu-latest
     
     steps:
